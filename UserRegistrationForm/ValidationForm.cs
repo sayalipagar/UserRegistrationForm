@@ -23,6 +23,8 @@ namespace UserRegistrationForm
         public const string PASSWORDContain_1UPPERCASE = "^[A-Z]{1}[a-zA-z]{7}$";
         //UC7
         public const string PASSWORD_Numeric = "^[a-zA-Z0-9]{8}$";
+        //UC8
+        public const string PASSWORD_SPECIALCharacter = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[^A-Za-z0-9]){1}.{8,}$";
         public void FirstName(string firstname)
         {
             Regex regex = new Regex(FIRST_NAME_REGEX);
@@ -63,6 +65,12 @@ namespace UserRegistrationForm
         {
             Regex regex = new Regex(PASSWORD_Numeric);
             bool result = regex.IsMatch(numeric);
+            Console.WriteLine(result);
+        }
+        public void PasswordSpeicalChar(string speical)
+        {
+            Regex regex = new Regex(PASSWORD_SPECIALCharacter);
+            bool result = regex.IsMatch(speical);
             Console.WriteLine(result);
         }
     }
