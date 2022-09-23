@@ -19,6 +19,8 @@ namespace UserRegistrationForm
         public const string MOBILE_NUMBER = "^[1-9]{2}[ ][0-9]{10}$";
         //UC5
         public const string PASSWORD = "^[a-zA-Z]{8}$";
+        //UC6
+        public const string PASSWORDContain_1UPPERCASE = "^[A-Z]{1}[a-zA-z]{7}$";
         public void FirstName(string firstname)
         {
             Regex regex = new Regex(FIRST_NAME_REGEX);
@@ -47,6 +49,12 @@ namespace UserRegistrationForm
         {
             Regex regex = new Regex(PASSWORD);
             bool result = regex.IsMatch(password);
+            Console.WriteLine(result);
+        }
+        public void PasswordUppercase(string uppercase)
+        {
+            Regex regex = new Regex(PASSWORDContain_1UPPERCASE);
+            bool result = regex.IsMatch(uppercase);
             Console.WriteLine(result);
         }
     }
