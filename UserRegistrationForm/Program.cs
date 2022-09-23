@@ -4,7 +4,10 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Welcome User Registration Problem Statement!!");
+            ValidationForm form = new ValidationForm();
+            Console.WriteLine("Enter The First Name: ");
+            string firstName = Console.ReadLine();
+            form.FirstName(firstName);
         }
     }
 }
