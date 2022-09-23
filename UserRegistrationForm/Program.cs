@@ -17,6 +17,9 @@
             Console.WriteLine("Enter valid Mobile No: ");
             string MobileNo = Console.ReadLine();
             form.MobileNumber(MobileNo);
+            Console.WriteLine("Enter valid Password: ");
+            string pass = Console.ReadLine();
+            form.Password(pass);
         }
     }
 }
