@@ -22,7 +22,10 @@
             form.Password(pass);
             Console.WriteLine("Enter Password Contain 1 Uppercase: ");
             string password = Console.ReadLine();
-            form.Password(password);
+            form.PasswordUppercase(password);
+            Console.WriteLine("Enter Password Contain 1 Numeric: ");
+            string num = Console.ReadLine();
+            form.PasswordNumeric(num);
         }
     }
 }
