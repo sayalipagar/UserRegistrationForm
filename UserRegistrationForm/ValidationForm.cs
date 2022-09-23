@@ -15,6 +15,8 @@ namespace UserRegistrationForm
         public const string LAST_NAME_REGEX = "^[A-Z]{1}[a-zA-Z]{2}$";
         //UC3
         public const string EMAILID_REGEX = "^[a-z]+[.][a-z]+[@][a-z]+[.][a-z]+[.][a-z]{2,3}$";
+        //UC4
+        public const string MOBILE_NUMBER = "^[1-9]{2}[ ][0-9]{10}$";
         public void FirstName(string firstname)
         {
             Regex regex = new Regex(FIRST_NAME_REGEX);
@@ -31,6 +33,12 @@ namespace UserRegistrationForm
         {
             Regex regex = new Regex(EMAILID_REGEX);
             bool result = regex.IsMatch(emailid);
+            Console.WriteLine(result);
+        }
+        public void MobileNumber(string mobileno)
+        {
+            Regex regex = new Regex(MOBILE_NUMBER);
+            bool result = regex.IsMatch(mobileno);
             Console.WriteLine(result);
         }
     }

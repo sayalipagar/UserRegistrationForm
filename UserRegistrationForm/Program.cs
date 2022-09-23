@@ -14,6 +14,9 @@
             Console.WriteLine("Enter valid email: ");
             string emaiId = Console.ReadLine();
             form.EmailID(emaiId);
+            Console.WriteLine("Enter valid Mobile No: ");
+            string MobileNo = Console.ReadLine();
+            form.MobileNumber(MobileNo);
         }
     }
 }
