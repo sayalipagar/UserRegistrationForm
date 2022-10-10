@@ -9,69 +9,30 @@ namespace UserRegistrationForm
 {
     internal class ValidationForm
     {
-        //UC1
-        public const string FIRST_NAME_REGEX = "^[A-Z]{1}[a-zA-Z]{2}$";
-        //UC2......
-        public const string LAST_NAME_REGEX = "^[A-Z]{1}[a-zA-Z]{2}$";
-        //UC3
-        public const string EMAILID_REGEX = "^[a-z]+[.][a-z]+[@][a-z]+[.][a-z]+[.][a-z]{2,3}$";
-        //UC4
-        public const string MOBILE_NUMBER = "^[1-9]{2}[ ][0-9]{10}$";
-        //UC5
-        public const string PASSWORD = "^[a-zA-Z]{8}$";
-        //UC6
-        public const string PASSWORDContain_1UPPERCASE = "^[A-Z]{1}[a-zA-z]{7}$";
-        //UC7
-        public const string PASSWORD_Numeric = "^[a-zA-Z0-9]{8}$";
-        //UC8
-        public const string PASSWORD_SPECIALCharacter = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[^A-Za-z0-9]){1}.{8,}$";
-        public void FirstName(string firstname)
+        public const string USER_FIRST_NAME = "^[A-Z]{1}[a-zA-Z]{2}$";
+        public void ValidationFirstName(string firstname)
         {
-            Regex regex = new Regex(FIRST_NAME_REGEX);
-            bool result = regex.IsMatch(firstname);
-            Console.WriteLine(result);
+            bool FirstName(string firstName) => (Regex.IsMatch(firstName, USER_FIRST_NAME));
         }
-        public void LastName(string lastname)
+        public const string USER_LAST_NAME = "^[A-Z]{1}[a-zA-Z]{2}$";
+        public void ValidationLastName(string lastname)
         {
-            Regex regex = new Regex(LAST_NAME_REGEX);
-            bool result = regex.IsMatch(lastname);
-            Console.WriteLine(result);
+            bool LastName(string lastName) => (Regex.IsMatch(lastName, USER_LAST_NAME));
         }
-        public void EmailID(string emailid)
+        public const string USEREMAIL_REGEX = "^[a-z0-9]+[@][a-zA-Z]+[.][a-zA-Z]{2,3}$";
+        public void ValidationEmail(string email)
         {
-            Regex regex = new Regex(EMAILID_REGEX);
-            bool result = regex.IsMatch(emailid);
-            Console.WriteLine(result);
+            bool Email(string email) => (Regex.IsMatch(email, USEREMAIL_REGEX));
         }
-        public void MobileNumber(string mobileno)
+        public const string USERPHONENUMBER_REGEX = "^[0-9]+[\\s]+[0-9]{10}$";
+        public void ValidationPhoneNumber(string phonenumber)
         {
-            Regex regex = new Regex(MOBILE_NUMBER);
-            bool result = regex.IsMatch(mobileno);
-            Console.WriteLine(result);
+            bool MobileNumber(string mobileNumb) => (Regex.IsMatch(mobileNumb, USERPHONENUMBER_REGEX));
         }
-        public void Password(string password)
+        public const string USERPASSWORD_REGEX = "[a-z,A-Z,0-9]{8,}$";
+        public void ValidationPassword(string password)
         {
-            Regex regex = new Regex(PASSWORD);
-            bool result = regex.IsMatch(password);
-            Console.WriteLine(result);
-        }
-        public void PasswordUppercase(string uppercase)
-        {
-            Regex regex = new Regex(PASSWORDContain_1UPPERCASE);
-            bool result = regex.IsMatch(uppercase);
-            Console.WriteLine(result);
-        }
-        public void PasswordNumeric(string numeric)
-        {
-            Regex regex = new Regex(PASSWORD_Numeric);
-            bool result = regex.IsMatch(numeric);
-            Console.WriteLine(result);
-        }
-        public void PasswordSpeicalChar(string speical)
-        {
-            Regex regex = new Regex(PASSWORD_SPECIALCharacter);
-            bool result = regex.IsMatch(speical);
-            Console.WriteLine(result);
+            bool Password(string password) => (Regex.IsMatch(password, USERPASSWORD_REGEX));
         }
     }
 }

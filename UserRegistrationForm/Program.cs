@@ -4,31 +4,27 @@
     {
         static void Main(string[] args)
         {
-            ValidationForm form = new ValidationForm();
+            ValidationForm patternValidation = new ValidationForm();
             Console.WriteLine("Enter The First Name: ");
-            string firstName = Console.ReadLine();
-            form.FirstName(firstName);
+            string firstname = Console.ReadLine();
+            patternValidation.ValidationFirstName(firstname);
+
             Console.WriteLine("Enter The Last Name: ");
-            string lastName = Console.ReadLine();
-            form.FirstName(lastName);
-            Console.WriteLine("Enter valid email: ");
-            string emaiId = Console.ReadLine();
-            form.EmailID(emaiId);
-            Console.WriteLine("Enter valid Mobile No: ");
-            string MobileNo = Console.ReadLine();
-            form.MobileNumber(MobileNo);
-            Console.WriteLine("Enter valid Password: ");
-            string pass = Console.ReadLine();
-            form.Password(pass);
-            Console.WriteLine("Enter Password Contain 1 Uppercase: ");
+            string lastname = Console.ReadLine();
+            patternValidation.ValidationLastName(lastname);
+
+            Console.WriteLine("Enter Email: ");
+            string email = Console.ReadLine();
+            patternValidation.ValidationEmail(email);
+
+            Console.WriteLine("Enter PhoneNumber: ");
+            string phonenumber = Console.ReadLine();
+            patternValidation.ValidationPhoneNumber(phonenumber);
+
+            Console.WriteLine("Enter password 8 characters");
             string password = Console.ReadLine();
-            form.PasswordUppercase(password);
-            Console.WriteLine("Enter Password Contain 1 Numeric: ");
-            string num = Console.ReadLine();
-            form.PasswordNumeric(num);
-            Console.WriteLine("Enter Password Contain 1 SpecialChar: ");
-            string character = Console.ReadLine();
-            form.PasswordSpeicalChar(character);
+            patternValidation.ValidationPassword(password);
         }
+
     }
-}
+    }
